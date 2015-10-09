@@ -1,0 +1,49 @@
+<div class="row">
+  <div class="bs-example">
+    <div data-ng-controller="includeCtrl">
+      <section data-ng-include="'inlineTemplate.html'"></section>
+      <section data-ng-include="'templates/externalTemplate.html'"></section>
+      
+      <p><strong>The argument to ng-include is an expression</strong></p>
+      <input type="button" class="btn btn-primary" value="toggle template" data-ng-click="toggleTemplate()"/>
+      template property = {{template}}
+      <section data-ng-include="template"></section>
+      
+      <script type="text/ng-template" id="inlineTemplate.html">
+        <p>This is an inline template</p>
+      </script>
+    </div>
+  </div>
+</div>
+<div class="row">
+    <div class="bs-example-angular">
+    
+<pre class="code-format"><code>
+  &lt;body data-ng-controller="includeCtrl">
+    <section data-ng-include="'inlineTemplate.html'"></section>
+    <section data-ng-include="'templates/externalTemplate.html'"></section>
+    
+    <p><strong>The argument to ng-include is an expression</strong></p>
+    <input type="button" value="toggle template" data-ng-click="toggleTemplate()"/>
+    template = {{template}}
+    
+    <section data-ng-include="template"></section>
+    
+    <script type="text/ng-template" id="inlineTemplate.html">
+      <p>This is an inline template</p>
+    </script>
+  &lt;/body>
+</code></pre>
+
+<pre class="code-format"><code>
+  app.controller('myCtrl', function($scope){
+    $scope.template = 'inlineTemplate.html';
+    
+    $scope.toggleTemplate = function(){
+      $scope.template = $scope.template == 'inlineTemplate.html' ? 'externalTemplate.html' : 'inlineTemplate.html';
+    };
+  });
+</code></pre>
+
+  </div>
+</div>

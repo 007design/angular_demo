@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="bs-example">
+  
+    <h1 data-ng-click="showSection = !showSection">Click me</h1>
+    <section data-ng-show="showSection">Content goes here</section>
+    
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+    <div class="bs-example-jquery">
+    
+<pre class="code-format"><code>
+  <h1 onclick="showSection('content')">
+    Click me
+  </h1>
+  <section id="content" style="display:none">
+    Content goes here
+  </section>
+</code></pre>
+
+<pre class="code-format"><code>
+  function showSection(id) {
+    $('#'+id).toggle();
+  }
+</code></pre>
+<h4>Not bad but the JS is still tightly bound to the DOM</h4>
+
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="bs-example-angular">
+    
+<pre class="code-format"><code>
+  <h1 data-ng-click="show = !show">
+    Click me
+  </h1>
+  <section data-ng-show="show">
+    Content goes here
+  </section>
+</code></pre>
+
+<pre class="code-format"><code>
+  angular.module('app', []);
+</code></pre>
+
+<h3>Again, this is all that's needed.</h3> 
+<h4>The JS doesn't need to know about the DOM at all!</h4>
+
+    </div>
+  </div>
+</div>

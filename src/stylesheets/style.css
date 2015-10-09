@@ -1,0 +1,90 @@
+.content { margin: 60px 10px; }
+.center-content { text-align:center; }
+
+.bold { font-weight:bold; }
+.italic { font-style:italic; }
+
+.error { color: red }
+.invalid { color: red; }
+.valid { color: green; }
+      
+.bs-example,
+.bs-example-jquery,
+.bs-example-angular{
+  position: relative;
+  padding: 45px 15px 15px;
+  margin: 0 0px 15px;
+  background-color: #fff;
+  box-shadow: inset 0 3px 6px rgba(0,0,0,.05);
+  border-color: #e5e5e5 #eee #eee;
+  border-style: solid;
+  border-width: 1px 0;
+}
+/* Echo out a label for the example */
+.bs-example:after,
+.bs-example-jquery:after,
+.bs-example-angular:after{
+  position: absolute;
+  top:  15px;
+  left: 15px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #bbb;
+  letter-spacing: 1px;
+}
+.bs-example:after {
+  content: "Example";
+}
+.bs-example-jquery:after {
+  content: "jQuery";
+}
+.bs-example-angular:after {
+  content: "AngularJS";
+}
+
+.animate.ng-hide-add,
+.animate.ng-hide-remove {
+  -webkit-transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+  display:block !important;
+}
+
+.animate.ng-hide-add.ng-hide-add-active,
+.animate.ng-hide-remove {
+  opacity:0;
+  padding-top:100px;
+}
+
+.animate.ng-hide-add,
+.animate.ng-hide-remove.ng-hide-remove-active {
+  opacity:1;
+  padding-top:0px;
+}
+
+.animate-intro.ng-hide-add,
+.animate-intro.ng-hide-remove {
+  -webkit-transition:all linear 0.5s;
+  -moz-transition:all linear 0.5s;
+  -o-transition:all linear 0.5s;
+  transition:all linear 0.5s;
+  display:block !important;
+}
+.animate-intro.ng-hide-add.ng-hide-add-active{
+  opacity:0;
+  position:relative; 
+  margin-top:-200px;
+}
+.animate-intro.ng-hide-remove {
+  opacity:0;
+  position:absolute; 
+  top:100px;
+}
+
+.animate-intro.ng-hide-add,
+.animate-intro.ng-hide-remove.ng-hide-remove-active {
+  opacity:1;
+  position:relative;
+  top:0px;
+}

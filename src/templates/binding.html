@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="bs-example">
+  
+    <input type="text" ng-model="myVar"/>
+    <h1>Hello {{myVar}}!</h1>
+    
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+    <div class="bs-example-jquery">
+    
+<pre class="code-format"><code>
+  <input type="text" id="myField">
+  <h1 id="myText"></h1>
+</code></pre>
+
+<pre class="code-format"><code>
+  $('#myField').on('keyup', function(){
+    $('#myText').html('Hello '+$('#myField').val() + '!')
+  });
+</code></pre>
+<h4>This isn't good, the JS must know about the DOM structure.</h4> 
+<h4>What happens if the DOM changes?</h4>
+
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="bs-example-angular">
+    
+<pre class="code-format"><code>
+  <input type="text" ng-model="myVar"/>
+  <h1>Hello {{myVar}}!</h1>
+</code></pre>
+
+<pre class="code-format"><code>
+  angular.module('app', []);
+</code></pre>
+
+<h3>This is all the JavaScript needed!</h3> 
+<h4>The page is wired-up automatically.</h4>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,75 @@
+<div class="row">
+  <div class="bs-example">
+    <div style="height:200px">
+      <h1 data-ng-click="showSection = !showSection">Click me</h1>
+      <section class="animate" data-ng-show="showSection">Content goes here</section>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+    <div class="bs-example-jquery">
+    
+<pre class="code-format"><code>
+  <h1 onclick="toggleSection('content')">
+    Click me
+  </h1>
+  <section id="content">
+    Content goes here
+  </section>
+</code></pre>
+
+<pre class="code-format"><code>
+  function toggleSection(id) {
+    var isVisible = $('#'+id).is(':visible');
+    if (isVisible)
+      $('#'+id).animate({ opacity: 0, padding-top: 100px });
+    else
+      $('#'+id).animate({ opacity: 1, padding-top: 0px });
+  }
+</code></pre>
+
+<h4>We've got to check the status of the DOM and change styles.</h4>
+<h3>It'd be much cleaner to put styling into CSS.</h3>
+
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="bs-example-angular">
+    
+<pre class="code-format"><code>
+  <h1 data-ng-click="show = !show">
+    Click me
+  </h1>
+  <section class="animate" data-ng-show="show">
+    Content goes here
+  </section>
+</code></pre>
+
+<pre class="code-format"><code>
+  .animate.ng-hide-add,
+  .animate.ng-hide-remove {
+    -webkit-transition:all linear 0.5s;
+    -moz-transition:all linear 0.5s;
+    -o-transition:all linear 0.5s;
+    transition:all linear 0.5s;
+    display:block !important;
+  }
+  
+  .animate.ng-hide-add.ng-hide-add-active,
+  .animate.ng-hide-remove {
+    opacity:0;
+  }
+  
+  .animate.ng-hide-add,
+  .animate.ng-hide-remove.ng-hide-remove-active {
+    opacity:1;
+  }
+</code></pre>
+
+<h3>Define your animation states in CSS</h3> 
+<h4>You can also use a different animation library, Angular plays well with others.</h4>
+
+    </div>
+  </div>
+</div>

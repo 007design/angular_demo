@@ -1,0 +1,55 @@
+<div class="row">
+  <div class="bs-example">
+    <form name="myForm">
+      <section>
+        Required Field: <input type="text" name="requiredField" data-ng-model="form.requiredField" required>
+        <span class="error" ng-show="myForm.requiredField.$error.required">Required!</span>
+      </section>
+      <section>
+        RegExp validation: <input type="text" name="regexField" data-ng-model="form.regex" data-ng-pattern="/^[0-9]{3}/" required>
+        <span class="error" data-ng-show="myForm.regexField.$error.pattern || myForm.regexField.$error.required">Must match /^[0-9]{3}/</span>
+      </section>
+      <section>
+        Email: <input type="email" name="emailField" data-ng-model="form.email" required>
+        <span class="error" data-ng-show="myForm.emailField.$error.email || myForm.emailField.$error.required">Not a valid email</span>
+      </section>
+      <section>
+        <h4 data-ng-class="{ 'invalid' : myForm.$invalid, 'valid' : myForm.$valid }">
+          <span ng-if="myForm.$invalid">Form is Invalid</span>
+          <span ng-if="myForm.$valid">Form is Valid</span>
+        </h4>
+      </section>
+    </form>
+    <h4>Angular comes with a whole pile of validators built-in and you can write your own just like filters.</h4>
+  </div>
+</div>
+<div class="row">
+    <div class="bs-example-angular">
+    
+<pre class="code-format"><code>
+<form name="myForm">
+
+    Required Field: 
+    <input type="text" name="requiredField" data-ng-model="form.requiredField" required>
+    <span class="error" ng-show="myForm.requiredField.$error.required">Required!</span>
+
+    RegExp validation: 
+    <input type="text" name="regexField" data-ng-model="form.regex" data-ng-pattern="/^[0-9]{3}/" required>
+    <span class="error" data-ng-show="myForm.regexField.$error.pattern || myForm.regexField.$error.required">
+    Must match /^[0-9]{3}/</span>
+    
+    Email: 
+    <input type="email" name="emailField" data-ng-model="form.email" required>
+    <span class="error" data-ng-show="myForm.emailField.$error.email || myForm.emailField.$error.required">
+    Not a valid email</span>
+
+    <h4 data-ng-class="{ 'invalid' : myForm.$invalid, 'valid' : myForm.$valid }">
+      <span ng-if="myForm.$invalid">Form is Invalid</span>
+      <span ng-if="myForm.$valid">Form is Valid</span>
+    </h4>
+    
+</form>
+</code></pre>
+
+  </div>
+</div>

@@ -1,0 +1,16 @@
+{
+  "name": "angular_demo",
+  "version": "1.0.0",
+  "description": "Demonstrate some features of AngularJS",
+  "main": "server.js",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "express": "^4.13.3"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Daniel Hinds-Bond <007@007design.com> (http://007design.com/)"
+}

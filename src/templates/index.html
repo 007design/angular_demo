@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html data-ng-app="demoModule">
+
+  <head>
+    <link rel="stylesheet" href="stylesheets/style.css" />
+    <link data-require="bootstrap-css@3.0.3" data-semver="3.0.3" rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="http://yandex.st/highlightjs/8.0/styles/default.min.css">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation" data-ng-init="currentTab = 'home'">
+      <div class="navbar-header">
+        <ul class="nav navbar-nav">
+          <li data-ng-class="{'active':currentTab == 'home'}"><a href="#" data-ng-click="currentTab = 'home'">Intro</a></li>
+          <li data-ng-class="{'active':currentTab == 'binding'}"><a href="#" data-ng-click="currentTab = 'binding'">Binding</a></li>
+          <li data-ng-class="{'active':currentTab == 'ngclick'}"><a href="#" data-ng-click="currentTab = 'ngclick'">ngClick / ngHide</a></li>
+          <li data-ng-class="{'active':currentTab == 'animations'}"><a href="#" data-ng-click="currentTab = 'animations'">CSS3 Animations</a></li>
+          <li data-ng-class="{'active':currentTab == 'ngrepeat'}"><a href="#" data-ng-click="currentTab = 'ngrepeat'">ngRepeat</a></li>
+          <li data-ng-class="{'active':currentTab == 'filters'}"><a href="#" data-ng-click="currentTab = 'filters'">Filters</a></li>
+          <li data-ng-class="{'active':currentTab == 'ngclass'}"><a href="#" data-ng-click="currentTab = 'ngclass'">ngClass</a></li>
+          <li data-ng-class="{'active':currentTab == 'validation'}"><a href="#" data-ng-click="currentTab = 'validation'">Validation</a></li>
+          <li data-ng-class="{'active':currentTab == 'nginclude'}"><a href="#" data-ng-click="currentTab = 'nginclude'">ngInclude</a></li>
+          <li data-ng-class="{'active':currentTab == 'http'}"><a href="#" data-ng-click="currentTab = 'http'">$http</a></li>
+       </ul>
+      </div>
+    </nav>
+    
+    <div class="content">
+      <div data-ng-show="currentTab == 'home'">
+        <div data-ng-include="'templates/intro.html'"></div>
+      </div>
+      <div data-ng-show="currentTab == 'binding'">
+        <header><h2>Two-way binding</h2></header>
+        <div data-ng-include="'templates/binding.html'"></div>
+      </div>
+      <div data-ng-show="currentTab == 'ngclick'">
+        <header><h2>ngClick / ngHide</h2></header>
+        <div data-ng-include="'templates/ngclick.html'"></div>
+      </div>
+      <div data-ng-show="currentTab == 'animations'">
+        <header><h2>CSS3 Animations</h2></header>
+        <div data-ng-include="'templates/animations.html'"></div>
+      </div>
+      <div data-ng-show="currentTab == 'ngrepeat'">
+        <header><h2>ngRepeat</h2></header>
+        <div data-ng-include="'templates/ngrepeat.html'"></div>
+      </div>
+      <div data-ng-show="currentTab == 'filters'">
+        <header><h2>Filters</h2></header>
+        <div data-ng-include="'templates/filters.html'"></div>
+      </div>
+      <div data-ng-show="currentTab == 'ngclass'">
+        <header><h2>ngClass</h2></header>
+        <div data-ng-include="'templates/ngclass.html'"></div>
+      </div>
+      <div data-ng-show="currentTab == 'validation'">
+        <header><h2>Built-in Validators</h2></header>
+        <div data-ng-include="'templates/validation.html'"></div>
+      </div>
+      <div data-ng-show="currentTab == 'nginclude'">
+        <header><h2>ngInclude</h2></header>
+        <div data-ng-include="'templates/nginclude.html'"></div>
+      </div>
+      <div data-ng-show="currentTab == 'http'">
+        <header><h2>$http and Promises</h2></header>
+        <div data-ng-include="'templates/http.html'"></div>
+      </div>
+    </div>
+    
+    <script data-require="jquery@*" data-semver="2.0.3" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script data-require="angular.js@1.2.10" data-semver="1.2.10" src="http://code.angularjs.org/1.2.10/angular.js"></script>
+    <script data-require="angular.js@*" data-semver="1.2.9" src="http://code.angularjs.org/1.2.9/angular-animate.js"></script>
+    <script data-require="bootstrap@*" data-semver="3.0.3" src="//netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="http://yandex.st/highlightjs/8.0/highlight.min.js"></script>
+    <script src="scripts/script.js"></script>
+    
+  </body>
+
+</html>

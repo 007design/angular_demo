@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="bs-example">
+    <div data-ng-controller="httpCtrl">
+      <input type="button" class="btn btn-primary" value="Get Data" data-ng-click="loadData()"/>
+      <section data-ng-repeat="value in array">{{value}}</section>
+      <div data-ng-show="loading">Loading Data</div>
+    </div>
+  </div>
+</div>
+<div class="row">
+    <div class="bs-example-angular">
+    
+<pre class="code-format"><code>
+  &lt;body data-ng-controller="httpCtrl">
+    <input type="button" class="btn btn-primary" value="Get Data" data-ng-click="loadData()"/>
+    <section data-ng-repeat="value in array">{{value}}</section>
+    <div data-ng-show="loading">Loading Data</div>
+  &lt;/body>
+</code></pre>
+
+<pre class="code-format"><code>
+  app.controller('httpCtrl', function($scope, $http, $timeout){
+    $scope.array = [];
+    
+    function getData(url){
+      return $http.get(url);
+    }
+    
+    $scope.loadData = function(){
+      $scope.loading = true;
+      
+        getData('data.json').then(function(resp){
+          $scope.array = $scope.array.concat(resp.data);
+          
+            getData('data2.json').then(function(resp){
+              $scope.array = $scope.array.concat(resp.data);
+              $scope.loading = false;
+            });
+          
+        });
+    
+    };
+  });
+</code></pre>
+
+  </div>
+</div>

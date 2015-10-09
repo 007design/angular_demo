@@ -1,0 +1,53 @@
+<div class="row">
+  <div class="bs-example" data-ng-controller="filterCtrl">
+    <div class="col-xs-3">
+      <input type="text" ng-model="newValue"/>
+      <section data-ng-repeat="value in array | filter:newValue">{{value}}</section>
+    </div>
+    <div class="col-xs-3">
+      <p><strong>built in UPPERCASE filter</strong></p>
+      <section data-ng-repeat="value in array">{{value | uppercase}}</section>
+    </div>
+    <div class="col-xs-3">
+      <p><strong>custom REVERSE filter</strong></p>
+      <section data-ng-repeat="value in array">{{value | reverse}}</section>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+</div>
+<div class="row">
+    <div class="bs-example-angular">
+    
+<pre class="code-format"><code>
+  &lt;div data-ng-controller="filterCtrl"&gt;
+    &lt;input type="text" ng-model="newValue"/&gt;
+    &lt;section data-ng-repeat="value in array | filter:newValue">&#123;&#123;value}};&lt;/section&gt;
+      
+    &lt;p>&lt;strong>built in UPPERCASE filter&lt;/strong>&lt;/p&gt;
+    &lt;section data-ng-repeat="value in array">&#123;&#123;value | uppercase}};&lt;/section&gt;
+    
+    &lt;p>&lt;strong>custom REVERSE filter&lt;/strong>&lt;/p&gt;
+    &lt;section data-ng-repeat="value in array">&#123;&#123;value | reverse}};&lt;/section&gt;
+  &lt;/div&gt;
+</code></pre>
+
+<pre class="code-format"><code>
+  // Just put the model into the scope and you're good to go
+  app.controller('filterCtrl', function($scope){
+    $scope.array = ['cat one', 'cat two', 'cat three', 'dog one', 'dog two', 'dog three'];
+  });
+  
+  // Define your own filters easily
+  app.filter('reverse', function() {
+    return function(input) {
+      var out = "";
+      for (var i = 0; i < input.length; i++) {
+        out = input.charAt(i) + out;
+      }
+      return out;
+    }
+  });
+</code></pre>
+
+  </div>
+</div>

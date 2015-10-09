@@ -1,0 +1,66 @@
+<div class="row">
+  <div class="bs-example" data-ng-controller="repeatCtrl">
+  
+    <input type="text" ng-model="newValue"/><input type="button" value="Add" data-ng-click="array.push(newValue)"/>
+    <section data-ng-repeat="value in array">{{value}}</section>
+    
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-6">
+    <div class="bs-example-jquery">
+    
+<pre class="code-format"><code>
+  <input type="text" id="myText"/>
+  <input type="button" value="Add" onclick="addValue()"/>
+  <div id="myContentContainer"></div>
+</code></pre>
+
+<pre class="code-format"><code>
+  var array = ['value one', 'value two', 'value three'];
+  
+  function addValue() {
+    array.push($('#myText').val());
+    populate();
+  }
+  
+  function populate(){
+    $('#myContentContainer').clear();
+    for (var i=0;i&lt;array.length;i++){
+      $('#myContentContainer')
+        .append('<section>'+array[i]+'</section>');
+    }
+  }
+  
+  populate();
+</code></pre>
+
+<h4>Putting functions in the global namespace is dangerous.</h4>
+<h4>What if some other script has a populate() function?</h4>
+
+    </div>
+  </div>
+  <div class="col-xs-6">
+    <div class="bs-example-angular">
+    
+<pre class="code-format"><code>
+  &lt;body data-ng-controller="repeatCtrl">
+    <input type="text" ng-model="newValue"/>
+    <input type="button" value="Add" data-ng-click="array.push(newValue)"/>
+    <section data-ng-repeat="value in array">{{value}}</section>
+  &lt;/body>
+</code></pre>
+
+<pre class="code-format"><code>
+  angular.module('app', []);
+  app.controller('repeatCtrl', function($scope){
+    $scope.array = ['value one', 'value two', 'value three'];
+  });
+</code></pre>
+
+<h4>Just put your model in the scope and it's wired to the DOM automatically.</h4>
+<h4>Everything is in a scope so there's no danger of collision</h4>
+
+    </div>
+  </div>
+</div>

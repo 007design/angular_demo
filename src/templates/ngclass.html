@@ -1,0 +1,37 @@
+<div class="row">
+  <div class="bs-example">
+    <div class="col-xs-6">
+      <p style="font-size:18px" data-ng-class="{ 'bold' : isBold }">Hello World</p>
+      <input type="button" class="btn btn-primary" value="toggle bold" data-ng-click="isBold = !isBold"/>
+    </div>
+    <div class="col-xs-6">
+      <p style="font-size:18px" data-ng-class="current">Hello World</p>
+      <input type="button" class="btn btn-primary" value="toggle bold" data-ng-click="current.bold = !current.bold"/>
+      <input type="button" class="btn btn-primary" value="toggle italic" data-ng-click="current.italic = !current.italic"/>
+      <p>Current: {{current}}</p>
+    </div>
+    <div style="clear:both"></div>
+  </div>
+</div>
+<div class="row">
+    <div class="bs-example-angular">
+    
+<pre class="code-format"><code>
+  &lt;!-- The argument to ngClass can be a literal object --&gt;
+  <p data-ng-class="{ 'bold' : isBold }">Hello World</p>
+  <input type="button" value="toggle bold" data-ng-click="isBold = !isBold"/>
+  
+  &lt;!-- Or an object on the scope --&gt;
+  <p data-ng-class="current">Hello World</p>
+  <input type="button" value="toggle bold" data-ng-click="current.bold = !current.bold"/>
+  <input type="button" value="toggle italic" data-ng-click="current.italic = !current.italic"/>
+  <p>Current: {{current}}</p>
+</code></pre>
+
+<pre class="code-format"><code>
+  .bold { font-weight:bold; }
+  .italic { font-style:italic; }
+</code></pre>
+
+  </div>
+</div>
